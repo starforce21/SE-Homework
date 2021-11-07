@@ -1,0 +1,49 @@
+form{
+	padding: 15px;
+	background-color: yellow;
+	font-style: italic;
+	border-style: solid;
+	font-weight: 900px;
+	width: 20%;
+	}
+input[type=button] {
+	color:  hotpink;
+	background-color: rbg(0,200,100);
+	padding: 10px;
+}
+body{
+	background-color: lightcyan;
+	}
+h1{
+	color: red;
+}
+tr{
+	color: blue;
+}
+#p1{
+	color: green;
+}
+#p2{
+	color: orange;
+}
+#div1{
+	background-color: rgb(100, 0, 0);
+	position:static ;
+	width: 20%;
+	padding-left: 70px;
+}
+#div2{
+	position:relative ;
+	margin: 20px;
+}
+}
+#div1, #div2{
+	border: dashed;
+}
+#h1hidden{
+	visibility: hidden;
+}
+span{
+	background-color: yellow;
+	display: table-caption;
+}
