@@ -120,9 +120,11 @@
     display: block;
   }
 .dropdown1 a:hover{
-    background-color: #a1a1f6}
+    background-color: #a1a1f6
+}
 .dropdown:hover .dropdown1{
     display: block;
 }
 .dropdown:hover .dropbtn {
     background-color: #3eee46;
+}
