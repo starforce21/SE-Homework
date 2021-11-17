@@ -27,6 +27,24 @@
    -webkit-text-fill-color: transparent;
    -moz-text-fill-color: transparent;
 }
+#h5{
+    background-image: linear-gradient(pink,purple) ;
+    background-size: 100%;
+    background-clip: text ;
+   -webkit-background-clip: text ;
+   -moz-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   -moz-text-fill-color: transparent;
+}
+#h6{
+    background-image: linear-gradient(yellow,red) ;
+    background-size: 100%;
+    background-clip: text ;
+   -webkit-background-clip: text ;
+   -moz-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   -moz-text-fill-color: transparent;
+}
 #h1{
     text-align: center;
 }
@@ -42,6 +60,12 @@
 #div2{
     text-align: center;
 }
-ol{
-    text-align: center;
+#li1{
+    color: yellow;
+}
+#li2{
+    color: rgb(134, 83, 41)
+}
+#li3{
+    color: pink;
 }
