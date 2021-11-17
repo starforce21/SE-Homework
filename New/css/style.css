@@ -1,0 +1,41 @@
+#img1{
+    width: 200px;
+    height: 200px
+}
+.img2{
+    width: 200px;
+    height: 200px;
+}
+#body1{
+	background-image: linear-gradient(white,pink);
+    text-align: center;
+}
+#body2{
+	background-image: linear-gradient(lightblue,lightyellow);
+    text-align: center;
+}
+#body3{
+	background-image: linear-gradient(lightpink,lightblue);
+    text-align: center;
+}
+#sp1{
+    background-image: radial-gradient(yellow,blue) ;
+    background-size: 100%;
+    background-clip: text ;
+   -webkit-background-clip: text ;
+   -moz-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   -moz-text-fill-color: transparent;
+}
+#h1{
+    text-align: center;
+}
+#h2{
+    text-align: center;
+}
+.para1{
+    text-align: center;
+}
+#div1{
+    text-align: center;
+}
