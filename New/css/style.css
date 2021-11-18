@@ -21,22 +21,20 @@
     text-align: center;
 }
 #sp1{
-    background-image: radial-gradient(yellow,blue) ;
+    background: rgb(0,44,255);
+    background: linear-gradient(0deg, rgba(0,44,255,1) 0%, rgba(159,159,85,1) 50%, rgba(106,0,255,1) 100%);
     background-size: 100%;
     background-clip: text ;
    -webkit-background-clip: text ;
-   -moz-background-clip: text;
    -webkit-text-fill-color: transparent;
-   -moz-text-fill-color: transparent;
+   font-size: 50px;
 }
 #h3{
     background-image: linear-gradient(blue,green) ;
     background-size: 100%;
     background-clip: text ;
    -webkit-background-clip: text ;
-   -moz-background-clip: text;
    -webkit-text-fill-color: transparent;
-   -moz-text-fill-color: transparent;
 }
 #h5{
     background-image: linear-gradient(pink,purple) ;
@@ -58,25 +56,47 @@
 }
 #h1{
     text-align: center;
-   color: black; 
+    color: rgb(128, 49, 49); 
+    background-color: rgb(188, 236, 173);
+    border:1px solid green;
+    border-radius: 10px;
+    margin: auto;
+    width: 20%;
 }
 #h2{
     text-align: center;
-    color: green;
-}
-.para1{
-    text-align: center;
     color: blue;
     background-color: yellow;
-    margin-left: 500px;
-    margin-right: 500px;
+    border:1px solid green;
+    border-radius: 10px;
+    margin: auto;
+    width: 20%;
+}
+.para1{
+    display: flex;
+    justify-content: center;
+    color: blue;
+    background-color: yellow;
+    border:1px solid green;
+    border-radius: 10px;
+    margin: auto;
+    width: 20%;
 }
 #div1{
     text-align: center;
 }
-#div2{
-    text-align: center;
+.div2{
+    display: flex;
+    justify-content: center;
+    align-content: center;
     color: tomato;
+    flex-direction: column;
+}
+.div3{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
 }
 #li1{
     color: yellow;
