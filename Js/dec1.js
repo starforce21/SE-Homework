@@ -46,9 +46,9 @@
 // }
 // let a=require('prompt-sync')()
 // let input=Number(a('enter a number: '))
-// let j=2
 // let i=1
-// while (i<=input) {
+// while (i<=20) {
+//     let j=2
 //     let x=true
 //     while (j*j<=i) {
 //         if(i%j==0){
@@ -60,11 +60,10 @@
 //     if(x){
 //         console.log(i+ 'prime'+j);
 //     }
-//     // else{
-//     //     console.log(i+ 'not prime'+j);
-//     // }
+//     else{
+//         console.log(i+ 'not prime'+j);
+//     }
 //     i++
-//     j=2
 // }
 // let a=require('prompt-sync')()
 // let num=a('enter a number: ')
@@ -79,8 +78,9 @@
 //     return z
 // }
 // console.log(add(x,y));
-for(let r=1;r<=5;r++){
-    for(let c=1; c<=6; c++){
-        console.log(r);
-    }
-}
+// for(let r=1;r<=5;r++){
+//     for(let c=1; c<=6; c++){
+//         process.stdout.write(r.toString())
+//     }
+//     console.log();
+// }
