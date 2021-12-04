@@ -1,10 +1,12 @@
-const prompt= require("prompt-sync")()
+var i=1
+while (i<2) {
 console.log('Menu')
 console.log('1.Add');
 console.log('2.Subtract');
 console.log('3.Multiply');
 console.log('4.Divide');
 console.log('5.Exit');
+const prompt= require("prompt-sync")()
 let menu=Number(prompt('Input number from 1 to 5 '))
 let input1=Number(prompt('Input first number '))
 let input2=Number(prompt('Input second number '))
@@ -28,9 +30,11 @@ else{
     }
     case 5:
         console.log('Exit');
+        i=3
         break
     default:
         console.log('Invalid Option');
         break
+}
 }
 }
