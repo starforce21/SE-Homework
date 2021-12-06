@@ -1,11 +1,9 @@
 const prompt= require("prompt-sync")()
-let input=prompt('Input is ')
-arr=input.split(' ')
+let input=prompt('Input is ').split(' ')
 let result=[]
-for (let i = 0; i < arr.length; i++) {
-    let str=arr[i]
-    let newStr=str[0].toUpperCase()+str.slice(1)
-    result.push(newStr)
+for (let i = 0; i < input.length; i++) {
+    let str=input[i]
+    result[i]=str[0].toUpperCase()+str.slice(1)
 }
 console.log(result.join(' '));
 
