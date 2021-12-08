@@ -68,11 +68,13 @@
 // }
 
 
-console.log(area(1));
-function area(r){
-    return r*r*Math.PI
-}
-let c=function (a,b){
-    return Math.sqrt(a*a+b*b)
-}
-console.log(c(3,4));
+// console.log(area(1));
+// function area(r){
+//     return r*r*Math.PI
+// }
+// let c=function (a,b){
+//     return Math.sqrt(a*a+b*b)
+// }
+// console.log(c(3,4));
+
+console.log(parseFloat('32*33'))

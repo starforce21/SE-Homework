@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+    <p id="p5"></p>
+    <p id="p6"></p>
+    <script>
+        // const greet=(fname='ada', lname='lovelace')=> ('hello ' + fname+ ' ' +lname);
+        // document.getElementById('p1').innerHTML=greet()
+
+        // const hi=()=> 'Hello World'
+        // const logging=str=>'it is '+str
+        // const temp=temperature=> {
+        //     if (temperature>72)
+        //         return 'hot'
+        //     else if (temperature<40)
+        //         return 'cold'
+        //     else
+        //         return 'just right'
+        // }
+        // const temp2=temperature=>{
+        //     let dis=[]
+        //     for(let i=0;i<temperature.length;i++){
+        //     dis.push('on day '+(i+1)+' , it is '+temp(temperature[i]))
+        //     }
+        //     return dis
+        // }
+        // document.getElementById('p2').innerHTML=hi()
+        // document.getElementById('p3').innerHTML=logging('i the great snapper')
+        // document.getElementById('p4').innerHTML=temp(75)
+        // document.getElementById('p5').innerHTML=temp2([23,65,76,100,50])
+
+        // const numsArray=[2,3,7,10,45]
+        // //chaining
+        // const newNumsArray=numsArray.map((num)=>{
+        //     return num*2
+        // })
+
+        // const numsArray=[1,2,3,4,5]
+        // const newNumsArray=numsArray.map((num)=>{
+        //     return num**2
+        // })
+        // console.log(newNumsArray);
+
+        // const sq=(arr)=> arr.map(x=>x**2)
+        // console.log(sq([1,2]));
+
+        // ex1
+        const even=arr=>arr.filter(x=>x%2==0)
+        const odd=arr=>arr.filter(x=>x%2==1)
+        document.getElementById('p1').innerHTML=even([23,65,76,100,50])
+        document.getElementById('p2').innerHTML=odd([23,65,76,100,50])
+
+        // ex2
+        const div6=arr=>arr.filter(x=>x%6==0)
+        document.getElementById('p3').innerHTML=div6([23,65,76,66,50,90])
+
+        // ex3
+        const capit=str=>str.split(' ').map(x=>x.toUpperCase()).join(' ')
+        document.getElementById('p4').innerHTML=capit('this is crazy')
+
+        // ex4
+        const swapCase=str=>{
+            
+        }
+
+        // ex5
+        const shiftLetters=str=>{
+            str.split()
+        }
+    </script>
+</body>
+</html>
