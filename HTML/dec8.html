@@ -13,6 +13,7 @@
     <p id="p4"></p>
     <p id="p5"></p>
     <p id="p6"></p>
+    <p id="p7"></p>
     <script>
         // const greet=(fname='ada', lname='lovelace')=> ('hello ' + fname+ ' ' +lname);
         // document.getElementById('p1').innerHTML=greet()
@@ -69,14 +70,27 @@
         document.getElementById('p4').innerHTML=capit('this is crazy')
 
         // ex4
-        const swapCase=str=>{
-            
-        }
+        const swapCase=str=>str.split(' ').map((x, i) => i % 2 == 0 ? x.toUpperCase() : x.toLowerCase()).join(' ');
+        document.getElementById('p5').innerHTML=swapCase('this is crazy')
 
         // ex5
-        const shiftLetters=str=>{
-            str.split()
-        }
+        const shiftLetters=str=>str.split('').map(x=>String.fromCharCode(x.charCodeAt()+1)).join('')
+        document.getElementById('p6').innerHTML=shiftLetters('abcd')
+
+        // ex6
+        let users = [{ firstName: 'Bradley', lastName: 'Bouley', role: 'Full Stack Resident' },
+             { firstName: 'Chloe', lastName: 'Alnaji', role: 'Full Stack Resident' },
+             { firstName: 'Jonathan', lastName: 'Baughn', role: 'Enterprise Instructor' },
+             { firstName: 'Michael', lastName: 'Herman', role: 'Lead Instructor' },
+             { firstName: 'Robert', lastName: 'Hajek', role: 'Full Stack Resident' },
+             { firstName: 'Wes', lastName: 'Reid', role: 'Instructor'},
+            { firstName: 'Zach', lastName: 'Klabunde', role: 'Instructor' }];
+        const filtered=arr=>arr.filter(x=>x.role=='Full Stack Resident').map(x=>x.firstName+' '+x.lastName+' '+x.role)
+        // const filtered=arr=>arr.filter(x=>x.role=='Full Stack Resident')
+        // saved=filtered(users)
+        // const saved2=saved.map(x=>x.firstName+' '+x.lastName+' '+x.role)
+        // document.getElementById('p7').innerHTML=saved2
+        document.getElementById('p7').innerHTML=filtered(users)
     </script>
 </body>
 </html>
