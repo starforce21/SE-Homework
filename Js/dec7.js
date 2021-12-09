@@ -76,5 +76,11 @@
 //     return Math.sqrt(a*a+b*b)
 // }
 // console.log(c(3,4));
-
-console.log(parseFloat('32*33'))
+const capit=str=>str.split(' ').map(x=>x.toUpperCase()).join(' ')
+const swapCase=str=>str.split(' ').map((x , i) =>{
+    if (i%2==0)
+    return capit(x)
+    else
+    return x
+})
+console.log(swapCase('this is crazy'))

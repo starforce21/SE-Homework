@@ -70,7 +70,7 @@
         document.getElementById('p4').innerHTML=capit('this is crazy')
 
         // ex4
-        const swapCase=str=>str.split(' ').map((x, i) => i % 2 == 0 ? x.toUpperCase() : x.toLowerCase()).join(' ');
+        const swapCase=str=>str.split(' ').map((x, i) => i % 2 == 0 ? capit(x) : x).join(' ');
         document.getElementById('p5').innerHTML=swapCase('this is crazy')
 
         // ex5
