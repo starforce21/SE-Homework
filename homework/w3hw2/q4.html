@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1"></p>
+    <p id="p2" onclick="document.getElementById('p2').innerHTML=position(arr)">click me to see the position and index</p>
+    <script>
+        let arr=[1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f']
+        const position=arr=>arr.map((x,index)=>`The value in index position ${index} is ${x}`+'<br>')
+        document.getElementById('p1').innerHTML='this is the array'+arr
+    </script>
+</body>
+</html>

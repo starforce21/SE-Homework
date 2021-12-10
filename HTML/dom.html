@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div class=content>    
+        <h2></h2>
+        <h2 id=page1>hello</h2>
+    </div>
+    <div class=content>    
+        <h2></h2>
+        <h2 id=page2>hello</h2>
+    </div> -->
+    <h1 id=h1>this is my heading</h1>
+    <h1 id=h2>this is the date</h1>
+    <h1 id=h3 onclick="document.getElementById('h1').innerHTML='changed?'">this is clickable</h1>
+    <button type="button" onclick="document.getElementById('h1').innerHTML='still heading'">click me to change heading</button>
+    <button type="button" onclick="document.getElementById('h2').innerHTML=Date()">current date</button>
+    <br>
+    <img id=i1 src=printing.png width='800' height='800' onclick="document.getElementById('i1').src='inflate.png'"></imgsrc>
+    <p class=pp1 id=p1>hahahahahahahahahaha</p>
+    <p class=pp1 id=p2>hahahahahahahahahaha</p>
+    <p class=pp1 id=p3>hahahahahahahahahaha</p>
+    <button type="button" onclick="document.style.fontSize=cFont(pp1)">change font?</button>
+    <script>
+        // document.getElementsByClassName('content');
+        // var myContentDivs=document.getElementsByClassName('content');
+        // var myH2=myContentDivs[1].getElementsByTagName('h2')
+        // myH2[0].innerHTML='2'
+        // document.getElementById('page2').innerHTML='dsad'
+        let pp1=document.getElementsByClassName('pp1')
+        const cFont=()=>{
+             pp1[0].style.fontSize='100px'
+             pp1[1].style.fontSize='100px'
+            return pp1[2].style.fontSize='100px'
+        }
+    </script>
+</body>
+</html>

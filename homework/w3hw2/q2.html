@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input1" style="width:500px">
+    <input type="button" value="submit" onclick="submit()">
+    <p id=p1 onclick="document.getElementById('input1').value=toFahrenheit(userInput)">press this to see what degree in Farenheit that is from celsius</p>
+    <p id=p2 onclick="document.getElementById('input1').value=toCelsius(userInput)">press this to see what degree in Farenheit that is from celsius</p>
+    <script>
+        const toFahrenheit=temp=>`${temp} degrees Celsius is ${temp*1.8+32} degrees Farenheit`
+        const toCelsius=temp=>`${temp} degrees Farenheit is ${(temp-32)/1.8} degrees Celsius`
+        function submit(){
+            userInput=document.getElementById("input1").value
+        }
+        // document.getElementById('p1').innerHTML=toFahrenheit(100)
+        // document.getElementById('p2').innerHTML=toCelsius(212)
+    </script>
+</body>
+</html>

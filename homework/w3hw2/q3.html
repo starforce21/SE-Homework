@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input1">
+    <input type="button" value="submit" onclick="submit()">
+    <p id=p1></p>
+    <p id=p2></p>
+    <p id=p3 onclick="document.getElementById('p3').innerHTML=dispArr(filtered2(students))">i cant get this to work so click this to filter</p>
+    <script>
+        let students=[
+            {name:'American Airlines',activity:'swimming',age:14},
+            {name:'Black Berry',activity:'mma',age:15},
+            {name:'Crowd Control',activity:'swimming',age:16},
+            {name:'Due Diligence',activity:'basketball',age:17},
+            {name:'Electrical Engineering',activity:'studying',age:18},
+            {name:'For Feit',activity:'swimming',age:17},
+            {name:'Good Game',activity:'coding',age:16},]
+        const dispArr=arr=>arr.map(x=>x.name+' '+x.activity+' '+x.age+'<br>')
+        const filtered=arr=>arr.filter(x=>x.activity=='swimming')
+        let userInput=''
+        function submit(){
+            userInput=document.getElementById("input1").value
+        }
+        const filtered2=arr=>arr.filter(x=>x.activity==userInput)
+        document.getElementById('p1').innerHTML=dispArr(students)
+        document.getElementById('p2').innerHTML=dispArr(filtered(students))
+    </script>
+</body>
+</html>
