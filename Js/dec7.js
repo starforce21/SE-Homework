@@ -76,11 +76,42 @@
 //     return Math.sqrt(a*a+b*b)
 // }
 // console.log(c(3,4));
-const capit=str=>str.split(' ').map(x=>x.toUpperCase()).join(' ')
-const swapCase=str=>str.split(' ').map((x , i) =>{
-    if (i%2==0)
-    return capit(x)
-    else
-    return x
-})
-console.log(swapCase('this is crazy'))
+// const capit=str=>str.split(' ').map(x=>x.toUpperCase()).join(' ')
+// const swapCase=str=>str.split(' ').map((x , i) =>{
+//     if (i%2==0)
+//     return capit(x)
+//     else
+//     return x
+// })
+// console.log(swapCase('this is crazy'))
+// class DeveloperClass{
+// 	constructor(name) {
+//     this.name = name;
+// 	}
+
+// 	greet() {
+//     console.log('hello');
+//   }
+//   introduce() {
+//     console.log('Hello World, my name is ' this.name);
+//   }
+// }
+  
+// const thai = new DeveloperClass('Thai', 32);
+
+
+
+const a=()=>{
+    return 1+5
+}
+console.log(a())
+function b(num,cb) {
+    let x=cb()
+    return x+num
+}
+console.log(b(1,a))
+function c() {
+    return 1+5
+}
+
+
