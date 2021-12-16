@@ -101,17 +101,42 @@
 
 
 
-const a=()=>{
-    return 1+5
-}
-console.log(a())
-function b(num,cb) {
-    let x=cb()
-    return x+num
-}
-console.log(b(1,a))
-function c() {
-    return 1+5
-}
+// const a=()=>{
+//     return 1+5
+// }
+// console.log(a())
+// function b(num,cb) {
+//     let x=cb()
+//     return x+num
+// }
+// console.log(b(1,a))
+// function c() {
+//     return 1+5
+// }
+const personStore = {
+    greet: function() {
+      console.log('hello');
+    }
+  }
+  
+  function personFromPersonStore(name, age) {
+      const person = Object.create(personStore);
+    person.name = name;
+    person.age = age;
+    return person;
+  }
+  
+  const sandra = personFromPersonStore('Sandra', 26);
+  
+  // add code here
+    personStore.introduce=function () {
+    console.log(`Hi my name is ${this.name}.`)
+    }
+    
+  
+  
+  // Uncomment this line to check your work!
+  sandra.introduce();
+  
 
 

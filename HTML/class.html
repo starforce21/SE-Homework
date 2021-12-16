@@ -15,12 +15,12 @@
     
     <p id='p1' style="text-align: center;"></p>
     <p id='p2'></p>
-    <button id=b1 onclick="byName()">sort by Name</button>
-    <button id=b2 onclick="byTicker()">sort by Ticker</button>
-    <button id=b3 onclick="byMcap()">sort by MarketCap</button>
-    <button id=b4 onclick="byPrice()">sort by Price</button>
-    <button id=b5 onclick="byPE()">sort by PE Ratio</button>
-    <button id=b6 onclick="byEPS()">sort by EPS</button>
+    <button id=b1 onclick="byName(dispTable)">sort by Name</button>
+    <button id=b2 onclick="byTicker(dispTable)">sort by Ticker</button>
+    <button id=b3 onclick="byMcap(dispTable)">sort by MarketCap</button>
+    <button id=b4 onclick="byPrice(dispTable)">sort by Price</button>
+    <button id=b5 onclick="byPE(dispTable)">sort by PE Ratio</button>
+    <button id=b6 onclick="byEPS(dispTable)">sort by EPS</button>
     <button id=b7 onclick="dispTable()">I dont know how this work</button>
     <p id='p3'></p>
     <script>
@@ -60,7 +60,8 @@
         stock6.dispStock()
         text+='</table>'
         let bigObject=[stock1,stock2,stock3,stock4,stock5,stock6]
-        const byName=()=>bigObject.sort((a,b)=>{
+        const byName=(cB)=>{
+            bigObject.sort((a,b)=>{
             var nameA = a.name.toUpperCase()
             var nameB = b.name.toUpperCase()
             if (nameA < nameB)
@@ -68,8 +69,10 @@
             if (nameA > nameB)
                 return 1;
             return 0;
-        })
-        const byTicker=()=>bigObject.sort((a,b)=>{
+            })
+            cB()
+        }
+        const byTicker=(cB)=>{bigObject.sort((a,b)=>{
             var nameA = a.ticker.toUpperCase()
             var nameB = b.ticker.toUpperCase()
             if (nameA < nameB)
@@ -77,12 +80,25 @@
             if (nameA > nameB)
                 return 1;
             return 0;
-        })
-        const byMcap=()=>bigObject.sort((a,b)=>a.mcap - b.mcap)
-        const byPE=()=>bigObject.sort((a,b)=>a.pe - b.pe)
-        const byEPS=()=>bigObject.sort((a,b)=>a.eps - b.eps)
-        const byPrice=()=>bigObject.sort((a,b)=>a.price - b.price)
-        console.log(bigObject);
+            })
+            cB()
+        }
+        const byMcap=(cB)=>{
+            bigObject.sort((a,b)=>a.mcap - b.mcap);
+            cB()
+        }
+        const byPE=(cB)=>{
+            bigObject.sort((a,b)=>a.pe - b.pe);
+            cB()
+        }
+        const byEPS=(cB)=>{
+            bigObject.sort((a,b)=>a.eps - b.eps);
+            cB()
+        }
+        const byPrice=(cB)=>{
+            bigObject.sort((a,b)=>a.price - b.price);
+            cB()    
+        }
         let table
         const dispTable=()=>{
             table='<table style="width:100%"><tr><th>Company</th><th>Ticker</th><th>MarketCap</th><th>Price</th><th>PE Ratio</th><th>EPS</th></tr>'
