@@ -11,6 +11,18 @@ let resolution=[]
 const injectIt=(index)=>{
     document.getElementById(`d${index}`).innerHTML=resolution[index]
 }
+const byName=(Arr)=>{
+    Arr.sort((a,b)=>{
+    var nameA = a.descriptor.toUpperCase()
+    var nameB = b.descriptor.toUpperCase()
+    if (nameA < nameB)
+        return -1;
+    if (nameA > nameB)
+        return 1;
+    return 0;
+    })
+}
+let descArr
 let agency='NYPD'
 const clickFunction=(borough,agency)=>{
     let numDisp=input1.value
@@ -20,11 +32,16 @@ const clickFunction=(borough,agency)=>{
     .then(data=>{
         desctext='<table>'
         resolution=[]
+        descArr=[]
         if(numDisp=='')
             numDisp=10;
         for (let i = 0; i < numDisp; i++) {
-            desctext+=`<tr><td>${data[i].descriptor}</td><td><button onclick='injectIt(${i})'>What did the police do</button></td></tr><td id="d${i}"></td>`
-            resolution[i]=data[i].resolution_description
+            descArr[i]={descriptor:data[i].descriptor,resolution_description:data[i].resolution_description}
+            byName(descArr)
+        }
+        for (let i = 0; i < numDisp; i++) {
+            desctext+=`<tr><td><span>${descArr[i].descriptor}</span></td><td><button class="b2" onclick='injectIt(${i})'>What did the police do</button></td></tr><td class="resolution" id="d${i}"></td>`
+            resolution[i]=descArr[i].resolution_description
         }
         desctext+='</table>'
         resultDiv2.innerHTML=desctext
@@ -32,111 +49,23 @@ const clickFunction=(borough,agency)=>{
     .catch((error)=>{
         console.log(error);
     })
-
 }
 
-
-
-// button2.addEventListener('click',()=>{
-//     let numDisp=input1.value
-//     const url=`https://data.cityofnewyork.us/resource/erm2-nwe9.json?agency=NYPD&borough=MANHATTAN`
-//     fetch(url)
-//     .then(res=>res.json())
-//     .then(data=>{
-//         let descriptor=[]
-//         desctext='<table>'
-//         resolution=[]
-//         if(numDisp=='')
-//             numDisp=10;
-//         console.log(numDisp);
-//         for (let i = 0; i < numDisp; i++) {
-//             descriptor+=data[i].descriptor
-//             desctext+=`<tr><td>${data[i].descriptor}<button onclick='injectIt(${i})'>What did the police do</button></td></tr><td id="d${i}"></td>`
-//             resolution[i]=data[i].resolution_description
-//         }
-//         desctext+='</table>'
-//         resultDiv2.innerHTML=desctext
-//     })
-//     .catch((error)=>{
-//         console.log(error);
-//     })
-// })
-
-
-
-// button3.addEventListener('click',()=>{
-//     let numDisp=input1.value
-//     const url=`https://data.cityofnewyork.us/resource/erm2-nwe9.json?agency=NYPD&borough=QUEENS`
-//     fetch(url)
-//     .then(res=>res.json())
-//     .then(data=>{
-//         let descriptor=[]
-//         desctext='<table>'
-//         resolution=[]
-//         if(numDisp=='')
-//             numDisp=10;
-//         console.log(numDisp);
-//         for (let i = 0; i < numDisp; i++) {
-//             descriptor+=data[i].descriptor
-//             desctext+=`<tr><td>${data[i].descriptor}<button onclick='injectIt(${i})'>What did the police do</button></td></tr><td id="d${i}"></td>`
-//             resolution[i]=data[i].resolution_description
-//         }
-//         desctext+='</table>'
-//         resultDiv2.innerHTML=desctext
-//     })
-//     .catch((error)=>{
-//         console.log(error);
-//     })
-// })
-
-
-
-// button4.addEventListener('click',()=>{
-//     let numDisp=input1.value
-//     const url=`https://data.cityofnewyork.us/resource/erm2-nwe9.json?agency=NYPD&borough=BRONX`
-//     fetch(url)
-//     .then(res=>res.json())
-//     .then(data=>{
-//         let descriptor=[]
-//         desctext='<table>'
-//         resolution=[]
-//         if(numDisp=='')
-//             numDisp=10;
-//         console.log(numDisp);
-//         for (let i = 0; i < numDisp; i++) {
-//             descriptor+=data[i].descriptor
-//             desctext+=`<tr><td>${data[i].descriptor}<button onclick='injectIt(${i})'>What did the police do</button></td></tr><td id="d${i}"></td>`
-//             resolution[i]=data[i].resolution_description
-//         }
-//         desctext+='</table>'
-//         resultDiv2.innerHTML=desctext
-//     })
-//     .catch((error)=>{
-//         console.log(error);
-//     })
-// })
-
-// button5.addEventListener('click',()=>{
-//     let numDisp=input1.value
-//     const url=`https://data.cityofnewyork.us/resource/erm2-nwe9.json?agency=NYPD&borough=STATEN ISLAND`
-//     fetch(url)
-//     .then(res=>res.json())
-//     .then(data=>{
-//         let descriptor=[]
-//         desctext='<table>'
-//         resolution=[]
-//         if(numDisp=='')
-//             numDisp=10;
-//         console.log(numDisp);
-//         for (let i = 0; i < numDisp; i++) {
-//             descriptor+=data[i].descriptor
-//             desctext+=`<tr><td>${data[i].descriptor}<button onclick='injectIt(${i})'>What did the police do</button></td></tr><td id="d${i}"></td>`
-//             resolution[i]=data[i].resolution_description
-//         }
-//         desctext+='</table>'
-//         resultDiv2.innerHTML=desctext
-//     })
-//     .catch((error)=>{
-//         console.log(error);
-//     })
-// })
+let dispComplain=()=>{
+newDescArr=descArr.map(x=>x.descriptor)
+let j=0
+let result=[]
+while (newDescArr.length>0) {
+    let currentLength=newDescArr.length
+    let currentComplain=newDescArr[0]
+    newDescArr=newDescArr.filter(x=>newDescArr[0]!=x)
+    result[j]={complain:currentComplain,numOfComplain:currentLength-newDescArr.length}
+    console.log(newDescArr);
+    j++
+}
+finalText=''
+for (let a = 0; a < result.length; a++) {
+    finalText+='There is '+result[a].numOfComplain+' '+result[a].complain+' complain <br>'
+}
+document.getElementById('p1').innerHTML=finalText
+}
