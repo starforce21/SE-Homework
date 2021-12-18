@@ -5,7 +5,7 @@ const makeButton=()=>{
     document.getElementById('div1').innerHTML=start
 }
 makeButton()
-const input1=document.getElementById('input1')
+let numDisp=document.getElementById('input1').value
 const resultDiv2=document.getElementById('div2')
 let resolution=[]
 const injectIt=(index)=>{
@@ -25,7 +25,6 @@ const byName=(Arr)=>{
 let descArr
 let agency='NYPD'
 const clickFunction=(borough,agency)=>{
-    let numDisp=input1.value
     const url=`https://data.cityofnewyork.us/resource/erm2-nwe9.json?agency=${agency}&borough=${borough.toUpperCase()}`
     fetch(url)
     .then(res=>res.json())
