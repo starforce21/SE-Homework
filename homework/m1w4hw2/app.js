@@ -5,7 +5,7 @@ const makeButton=()=>{
     document.getElementById('div1').innerHTML=start
 }
 makeButton()
-let numDisp=document.getElementById('input1').value
+let input1=document.getElementById('input1')
 const resultDiv2=document.getElementById('div2')
 let resolution=[]
 const injectIt=(index)=>{
@@ -29,6 +29,7 @@ const clickFunction=(borough,agency)=>{
     fetch(url)
     .then(res=>res.json())
     .then(data=>{
+        let numDisp=input1.value
         desctext='<table>'
         resolution=[]
         descArr=[]
