@@ -26,39 +26,43 @@ console.log("Battle Initializing")
 while(enemyCount>0){
     makeEnemy()
     let a=require('prompt-sync')()
-    let battleInput=a(`Your current stats: HP=${yourHull} FP=${yourFirePower} HR=${yourAccuracy}. Enemy Stats: HP=${enemyHull} FP=${enemyFirePower} HR=${enemyAccuracy} and there is ${enemyCount} enemy left` )
+    let battleInput=a(`Your current stats: HP=${yourHull} FP=${yourFirePower} HR=${yourAccuracy}. Enemy Stats: HP=${enemyHull} FP=${enemyFirePower} HR=${enemyAccuracy} and there is ${enemyCount} enemy left. Do you wish to attack or retreat.` )
     if(battleInput=='attack'){
         while(enemyHull>0){
             console.log(`Your current stats: HP=${yourHull} FP=${yourFirePower} HR=${yourAccuracy}. Enemy Stats: HP=${enemyHull} FP=${enemyFirePower} HR=${enemyAccuracy}.
             and there is ${enemyCount} enemy left` )
             if(didYouHit(yourAccuracy)){
                 enemyHull-=yourFirePower
-                console.log(`You Hit enemy have ${enemyHull}hp`)
+                console.log(`You Hit and dealt 5dmg. Enemy now have ${enemyHull}hp`)
                 if(enemyHull<1){
-                    console.log('enemy is dead')
+                    console.log('Enemy is dead')
                     enemyCount--
                 }
                 else {
                     if(didYouHit(enemyAccuracy)){
-                        console.log('enemy hit you')
+                        console.log('Enemy surviving and is attempting to hit you')
                         yourHull-=enemyFirePower
                         if(yourHull<1){
-                            console.log('you are dead')
+                            console.log('Enemy breached your hull and you are dead')
+                            enemyCount=0
+                            break
                         }
                     }
                 }    
             }
             else{
-                console.log('You missed enemy is attacking')
+                console.log('You missed your shot. Enemy is attacking')
                 if(didYouHit(enemyAccuracy)){
-                    console.log('enemy hit you')
+                    console.log(`Enemy hit you for ${enemyFirePower}`)
                     yourHull-=enemyFirePower
                     if(yourHull<1){
-                        console.log('you are dead')
+                        console.log('Enemy breached your hull and you are dead')
+                        enemyCount=0
+                        break
                     }
                 }
                 else{
-                    console.log('enemy missed you')
+                    console.log('Enemy missed you')
                 }
             }
         }
